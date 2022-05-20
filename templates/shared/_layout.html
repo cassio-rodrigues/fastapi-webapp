@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:tal="http://www.w3.org/1999/xhtml" xmlns:metal="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>FastApi Teste</title>
+    <style>
+        body {
+            background: #cfffcf;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Teste</h1>
+<div>
+    <a href="/">home</a>
+    <a href="/about">about</a>
+</div>
+
+<div class="main-content">
+    <div metal:define-slot="content" tal:omit-tag="True">no content</div>
+</div>
+
+<foot>Footer: Thanks for seeing this <br>
+    I'm still learning this part <br></foot>
+
+</body>
+</html>
