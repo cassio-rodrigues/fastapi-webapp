@@ -1,0 +1,14 @@
+<div metal:use-macro="load: ../shared/_layout.html">
+    <div metal:fill-slot="content" tal:omit-tag="True">
+        <div>User: ${user_name}</div>
+
+        <ul>
+            <li>Could render with jinja2</li>
+            <li>Also could render with Mako</li>
+            <li>But for test and learning purposes I'm trying Chameleon</li>
+        </ul>
+    </div>
+</div>
+
+
+
