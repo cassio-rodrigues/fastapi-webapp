@@ -1,6 +1,8 @@
 import fastapi
 import uvicorn
 import fastapi_chameleon
+from starlette.staticfiles import StaticFiles
+
 from views import home
 
 app = fastapi.FastAPI()
@@ -21,7 +23,9 @@ def configure_templates():  # this is a fuction so if you refactor anything woul
 
 
 def configure_routes():  # just to let the app grow in a health way then you can just bring the routes easily
+    app.mount("/static", StaticFiles(directory="static"), name="static")  # 1
     app.include_router(home.router)
+    # 1 - needed only to work with static files. In order to not affect the async work you must install aiofiles lib
 
 
 if __name__ == "__main__":
